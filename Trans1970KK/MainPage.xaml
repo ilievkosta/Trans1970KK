@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trans1970KK.MainPage" >
+  
+    <StackLayout>
+        
+        <Label Text="зона" FontSize="15" Padding="15,10,30,10"/>
+       
+        <Picker x:Name="zone" HorizontalOptions="FillAndExpand">
+            <Picker.Items>
+                <x:String>3</x:String>
+                <x:String>5</x:String>
+                <x:String>7</x:String>
+                <x:String>9</x:String>
+            </Picker.Items>
+        </Picker>
+       
+
+        <Label Text="х" FontSize="15" Padding="15,10,30,10"/>
+        <Entry x:Name="x" Text="" Keyboard="Numeric" />
+        <Label Text="у" FontSize="15" Padding="15,10,30,10"/>
+        <Entry x:Name="y" Text="" Keyboard="Numeric"/>
+        <Button x:Name="Конвертирай" Text="Calculate" Clicked="Calculate_Clicked" />
+        <Label Text="Резултат BGS2005 KK " FontSize="25" FontFamily="Arial" TextColor="Red"/>
+        <Label x:Name="ResultX"  FontSize="Large" TextColor="Blue"/>
+        <Label x:Name="ResultY"  FontSize="Large" TextColor="Blue"/>
+        <Label x:Name="ResultError"  FontSize="Large" TextColor="Blue"/>
+
+        <Label LineBreakMode="WordWrap">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Geo-bg.eu Хидрогеоложки и инженерногеоложки доклади" FontSize="35" TextColor="CornflowerBlue">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Tapped" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
