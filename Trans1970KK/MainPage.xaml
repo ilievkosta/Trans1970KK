@@ -9,10 +9,14 @@
        
         <Picker x:Name="zone" HorizontalOptions="FillAndExpand">
             <Picker.Items>
-                <x:String>3</x:String>
-                <x:String>5</x:String>
-                <x:String>7</x:String>
-                <x:String>9</x:String>
+                <x:String>1970 3-та зона към BGSCADKK</x:String>
+                <x:String>1970 5-та зона към BGSCADKK</x:String>
+                <x:String>1970 7-ма зона към BGSCADKK</x:String>
+                <x:String>1970 9-та зона към BGSCADKK</x:String>
+                <x:String>BGSCADKK към 1970 3-та зона</x:String>
+                <x:String>BGSCADKK към 1970 5-та зона</x:String>
+                <x:String>BGSCADKK към 1970 7-ма зона</x:String>
+                <x:String>BGSCADKK към 1970 9-та зона</x:String>
             </Picker.Items>
         </Picker>
        
@@ -21,12 +25,15 @@
         <Entry x:Name="x" Text="" Keyboard="Numeric" />
         <Label Text="у" FontSize="15" Padding="15,10,30,10"/>
         <Entry x:Name="y" Text="" Keyboard="Numeric"/>
-        <Button x:Name="Конвертирай" Text="Calculate" Clicked="Calculate_Clicked" />
-        <Label Text="Резултат BGS2005 KK " FontSize="25" FontFamily="Arial" TextColor="Red"/>
+        <Button x:Name="Конвертирай" Text="Конвертирай" Clicked="Calculate_Clicked" />
+        <Label Text=" Резултат:" FontSize="25" FontFamily="Arial" TextColor="Red"/>
         <Label x:Name="ResultX"  FontSize="Large" TextColor="Blue"/>
         <Label x:Name="ResultY"  FontSize="Large" TextColor="Blue"/>
         <Label x:Name="ResultError"  FontSize="Large" TextColor="Blue"/>
-
+        <StackLayout BackgroundColor="White" Padding="60" VerticalOptions="Center">
+            <Button Text="Second Page" BackgroundColor="Blue" Clicked="NavigateButton_OnClicked">
+            </Button>
+        </StackLayout>
         <Label LineBreakMode="WordWrap">
             <Label.FormattedText>
                 <FormattedString>

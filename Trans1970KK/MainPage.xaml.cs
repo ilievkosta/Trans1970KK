@@ -33,7 +33,51 @@ namespace Trans1970KK
 
                 String CordX = x.Text.Replace(',', '.');
                 String CordY = y.Text.Replace(',', '.');
-                var result = await httpClient.GetStringAsync("https://bsite.net/ilievkosta/api/values/?i=" + zone.SelectedItem + "&x=" + CordX + "&y=" + CordY);
+            //    String item = zone.SelectedItem.ToString();
+
+
+                int ZoneList = 0;
+               
+                switch (zone.SelectedItem.ToString())
+                {
+                    case "BGSCADKK към 1970 3-та зона":
+                        ZoneList = 33;
+                        break;
+
+                    case "BGSCADKK към 1970 5-та зона":
+                        ZoneList = 55;
+                        break;
+                    
+                    case "BGSCADKK към 1970 7-ма зона":
+                        ZoneList = 77;
+                        break;
+
+                    case "BGSCADKK към 1970 9-та зона":
+                        ZoneList = 99;
+                        break;
+
+                    case "1970 3-та зона към BGSCADKK":
+                        ZoneList = 3;
+                        break;
+
+                    case "1970 5-та зона към BGSCADKK":
+                        ZoneList = 5;
+                        break;
+
+                    case "1970 7-ма зона към BGSCADKK":
+                        ZoneList = 7;
+                        break;
+
+                    case "1970 9-та зона към BGSCADKK":
+                        ZoneList = 9;
+                        break;
+
+                }
+
+
+
+
+                var result = await httpClient.GetStringAsync("https://bsite.net/ilievkosta/api/values/?i=" + ZoneList + "&x=" + CordX + "&y=" + CordY);
                 var Arr = result.Split(',');
 
 
@@ -42,10 +86,17 @@ namespace Trans1970KK
                 ResultY.Text = Arr[1].Trim(']');
             }
          
-            catch (Exception i)
+            catch 
             {
                 ResultError.Text = "Попълнете всички полета с коректни данни";
             }
+
+        }
+
+        private async void NavigateButton_OnClicked(object sender, EventArgs e)
+        {
+           
+        await Navigation.PushModalAsync(new NavigationPage(new SecondPage()));
 
         }
     }
