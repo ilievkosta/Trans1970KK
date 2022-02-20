@@ -28,23 +28,25 @@
             <Label Text="Име на точката" FontSize="15" Padding="15,10,30,10"/>
             <Entry x:Name="NameCord" Text=""/>
             <Button x:Name="DatabaseName" Text="Запиши" Clicked="AddToDatabase" />
-            <Label Text=" Резултат:" FontSize="25" FontFamily="Arial" TextColor="Red"/>
-            <Label x:Name="ResultX"  FontSize="Large" TextColor="Blue"/>
-            <Label x:Name="ResultY"  FontSize="Large" TextColor="Blue"/>
-            <Label x:Name="ResultError"  FontSize="Large" TextColor="Blue"/>
+            <Label Text=" Резултат:" FontSize="18" FontFamily="Arial" TextColor="Red"/>
+            <Label x:Name="ResultX"  FontSize="18" TextColor="Blue"/>
+            <Label x:Name="ResultY"  FontSize="18" TextColor="Blue"/>
+            <Label x:Name="ResultError"  FontSize="18" TextColor="Blue"/>
+            <StackLayout BackgroundColor="White" Padding="10" VerticalOptions="Center">
 
+                <Label LineBreakMode="WordWrap">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Geo-bg.eu Хидрогеоложки и инженерногеоложки доклади" FontSize="18" TextColor="CornflowerBlue">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Handle_Tapped" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <Label LineBreakMode="WordWrap">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Geo-bg.eu Хидрогеоложки и инженерногеоложки доклади" FontSize="18" TextColor="CornflowerBlue">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="Handle_Tapped" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            </StackLayout>
 
 
 

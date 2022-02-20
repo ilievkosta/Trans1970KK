@@ -16,11 +16,11 @@
             <Label Text="Име на точката" FontSize="15" Padding="15,10,30,10"/>
             <Entry x:Name="NameCord" Text=""/>
             <Button x:Name="DatabaseName" Text="Запиши" Clicked="AddToDatabase" />
-            <Label Text=" Резултат:" FontSize="25" FontFamily="Arial" TextColor="Red"/>
-            <Label x:Name="ResultX"  FontSize="Large" TextColor="Blue"/>
-            <Label x:Name="ResultY"  FontSize="Large" TextColor="Blue"/>
-            <Label x:Name="ResultError"  FontSize="Large" TextColor="Blue"/>
-            <StackLayout BackgroundColor="White" Padding="40" VerticalOptions="Center">
+            <Label Text=" Резултат:" FontSize="18" FontFamily="Arial" TextColor="Red"/>
+            <Label x:Name="ResultX"  FontSize="18" TextColor="Blue"/>
+            <Label x:Name="ResultY"  FontSize="18" TextColor="Blue"/>
+            <Label x:Name="ResultError"  FontSize="18" TextColor="Blue"/>
+            <StackLayout BackgroundColor="White" Padding="10" VerticalOptions="Center">
 
                 <Label LineBreakMode="WordWrap">
                     <Label.FormattedText>
