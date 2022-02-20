@@ -1,50 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Trans1970KK.MainPage" >
-  
-    <StackLayout>
-        
-        <Label Text="зона" FontSize="15" Padding="15,10,30,10"/>
+             x:Class="Trans1970KK.MainPage" 
+             BackgroundImageSource="Background.jpg"
+             >
+    <ScrollView >
        
-        <Picker x:Name="zone" HorizontalOptions="FillAndExpand">
-            <Picker.Items>
-                <x:String>1970 3-та зона към BGSCADKK</x:String>
-                <x:String>1970 5-та зона към BGSCADKK</x:String>
-                <x:String>1970 7-ма зона към BGSCADKK</x:String>
-                <x:String>1970 9-та зона към BGSCADKK</x:String>
-                <x:String>BGSCADKK към 1970 3-та зона</x:String>
-                <x:String>BGSCADKK към 1970 5-та зона</x:String>
-                <x:String>BGSCADKK към 1970 7-ма зона</x:String>
-                <x:String>BGSCADKK към 1970 9-та зона</x:String>
-            </Picker.Items>
-        </Picker>
-       
+        <StackLayout  >
+            <ImageButton Source="button1970toBGScad.png" Margin="5"   
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Clicked="OnButtonClicked1970toBGS" />
+            <ImageButton Source="buttonBGSCadto1970.png" Margin="5" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Clicked="OnButtonClickedBGSto1970" />
+            <ImageButton Source="button1970WGS84.png" Margin="5" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Clicked="OnButtonClicked1970toWGS" />
+            <ImageButton Source="buttonBGS2005toWGS84.png" Margin="5" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Clicked="OnButtonClickedBGSCadtoWGS84" />
+            <ImageButton Source="buttonWGS84toBGS2005.png" Margin="5" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Clicked="OnButtonClickedWGS84toBGSCad" />
+            <ImageButton Source="buttonSave.png" Margin="5" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Clicked="OnButtonClickedShowData"/>
+           
+         
+            <Image Source="ZonesBulgaria.png" Margin="5" Aspect="AspectFit" ></Image>
 
-        <Label Text="х" FontSize="15" Padding="15,10,30,10"/>
-        <Entry x:Name="x" Text="" Keyboard="Numeric" />
-        <Label Text="у" FontSize="15" Padding="15,10,30,10"/>
-        <Entry x:Name="y" Text="" Keyboard="Numeric"/>
-        <Button x:Name="Конвертирай" Text="Конвертирай" Clicked="Calculate_Clicked" />
-        <Label Text=" Резултат:" FontSize="25" FontFamily="Arial" TextColor="Red"/>
-        <Label x:Name="ResultX"  FontSize="Large" TextColor="Blue"/>
-        <Label x:Name="ResultY"  FontSize="Large" TextColor="Blue"/>
-        <Label x:Name="ResultError"  FontSize="Large" TextColor="Blue"/>
-        <StackLayout BackgroundColor="White" Padding="60" VerticalOptions="Center">
-            <Button Text="Second Page" BackgroundColor="Blue" Clicked="NavigateButton_OnClicked">
-            </Button>
+
         </StackLayout>
-        <Label LineBreakMode="WordWrap">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Geo-bg.eu Хидрогеоложки и инженерногеоложки доклади" FontSize="35" TextColor="CornflowerBlue">
-                        <Span.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Handle_Tapped" />
-                        </Span.GestureRecognizers>
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
-
+    </ScrollView>
 </ContentPage>

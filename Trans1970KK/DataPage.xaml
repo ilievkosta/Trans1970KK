@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trans1970KK.DataPage">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ListView x:Name="CordView"  ItemsSource="{Binding Cord}" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+
+                                <StackLayout >
+
+                                    <Label Text="{Binding CordX }" TextColor="Red" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding CordY}" TextColor="Red" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"  />
+                                    <Label Text="{Binding CordName}" TextColor="Red" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" />
+                                    <Label Text="{Binding CordType}" TextColor="Red" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" />
+                                    <Button x:Name="Del" Text="Delete" Clicked="Del_Clicked" ClassId="{Binding Id}"/>
+
+
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

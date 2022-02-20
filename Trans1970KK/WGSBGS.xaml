@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Trans1970KK.WGSBGS">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+
+            <Label Text="х" FontSize="15" Padding="15,10,30,10"/>
+            <Entry x:Name="x" Text="" Keyboard="Numeric" />
+            <Label Text="у" FontSize="15" Padding="15,10,30,10"/>
+            <Entry x:Name="y" Text="" Keyboard="Numeric"/>
+            <Button x:Name="Конвертирай" Text="Конвертирай" Clicked="Calculate_Clicked" />
+            <Button x:Name="CheckCord" Text="Провери" Clicked="CheckCord_Clicked" />
+            <Label Text="Име на точката" FontSize="15" Padding="15,10,30,10"/>
+            <Entry x:Name="NameCord" Text=""/>
+            <Button x:Name="DatabaseName" Text="Запиши" Clicked="AddToDatabase" />
+            <Label Text=" Резултат:" FontSize="25" FontFamily="Arial" TextColor="Red"/>
+            <Label x:Name="ResultX"  FontSize="Large" TextColor="Blue"/>
+            <Label x:Name="ResultY"  FontSize="Large" TextColor="Blue"/>
+            <Label x:Name="ResultError"  FontSize="Large" TextColor="Blue"/>
+            <StackLayout BackgroundColor="White" Padding="40" VerticalOptions="Center">
+
+                <Label LineBreakMode="WordWrap">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Geo-bg.eu Хидрогеоложки и инженерногеоложки доклади" FontSize="18" TextColor="CornflowerBlue">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Handle_Tapped" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
