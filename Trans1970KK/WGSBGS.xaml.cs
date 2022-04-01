@@ -19,7 +19,7 @@ namespace Trans1970KK
         string ypos = "1";
         string xposWGS = "1";
         string yposWGS = "1";
-
+        
         public WGSBGS ()
 		{
 			InitializeComponent ();
@@ -68,13 +68,14 @@ namespace Trans1970KK
 
         async void Check_Clicked(object sender, EventArgs e)
         {
-            //if (xpos.Length > 2)
-            //{
-            //    ShowMap(xposWGS, yposWGS);
-            //}
+            if (xpos.Length > 2)
+            {
+                await Navigation.PushModalAsync(new Show(Convert.ToDouble(xposWGS),Convert.ToDouble(yposWGS)));
+            
+            }
 
             
-                await Navigation.PushModalAsync(new Show());
+               
             
 
         }
