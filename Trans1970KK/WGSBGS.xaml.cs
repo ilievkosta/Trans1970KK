@@ -66,6 +66,19 @@ namespace Trans1970KK
 
         }
 
+        async void Check_Clicked(object sender, EventArgs e)
+        {
+            //if (xpos.Length > 2)
+            //{
+            //    ShowMap(xposWGS, yposWGS);
+            //}
+
+            
+                await Navigation.PushModalAsync(new Show());
+            
+
+        }
+
 
         public void ShowMap(string x, string y)
         {
