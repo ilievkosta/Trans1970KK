@@ -23,14 +23,15 @@ namespace Trans1970KK
         public Show()
         {
             InitializeComponent();
-            MapViewM.ShowMap(mapView, 41, 22);
+         
 
         }
         public Show(double x,double y)
         {
+            x = Math.Round(x, 2);
+            y = Math.Round(y, 2);
             InitializeComponent();
             MapViewM.ShowMap(mapView, x, y);
-
         }
     }
 }

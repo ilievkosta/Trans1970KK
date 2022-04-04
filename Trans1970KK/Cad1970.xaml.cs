@@ -57,11 +57,16 @@ namespace Trans1970KK
                 // An unexpected error occured. No browser may be installed on the device.
             }
         }
-        public void CheckCord_Clicked(object sender, EventArgs e)
+        async void CheckCord_Clicked(object sender, EventArgs e)
         {
             if (xpos.Length > 2)
             {
-                ShowMap(xposWGS, yposWGS);
+
+                double wgsDx = Convert.ToDouble(xposWGS);
+                double wgsDy = Convert.ToDouble(yposWGS);
+
+
+                await Navigation.PushModalAsync(new Show(wgsDx, wgsDy));
             }
 
         }

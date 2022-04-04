@@ -42,11 +42,16 @@ namespace Trans1970KK
 
             }
         }
-        public void CheckCord_Clicked(object sender, EventArgs e)
+        async void CheckCord_Clicked(object sender, EventArgs e)
         {
             if (xpos.Length > 2)
             {
-                ShowMap(xpos, ypos);
+
+                double wgsDx = Convert.ToDouble(xpos);
+                double wgsDy = Convert.ToDouble(ypos);
+
+
+                await Navigation.PushModalAsync(new Show(wgsDx, wgsDy));
             }
 
         }

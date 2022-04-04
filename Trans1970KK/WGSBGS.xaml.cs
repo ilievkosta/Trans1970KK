@@ -57,37 +57,19 @@ namespace Trans1970KK
                 // An unexpected error occured. No browser may be installed on the device.
             }
         }
-        public void CheckCord_Clicked(object sender, EventArgs e)
+        async void CheckCord_Clicked(object sender, EventArgs e)
         {
             if (xpos.Length > 2)
             {
-                ShowMap(xposWGS, yposWGS);
+
+                double wgsDx = Convert.ToDouble(xposWGS);
+                double wgsDy = Convert.ToDouble(yposWGS);
+
+
+                await Navigation.PushModalAsync(new Show(wgsDx, wgsDy));
             }
 
         }
-
-        async void Check_Clicked(object sender, EventArgs e)
-        {
-            if (xpos.Length > 2)
-            {
-                await Navigation.PushModalAsync(new Show(Convert.ToDouble(xposWGS),Convert.ToDouble(yposWGS)));
-            
-            }
-
-            
-               
-            
-
-        }
-
-
-        public void ShowMap(string x, string y)
-        {
-            string mapposition = "https://www.bing.com/maps/directions?cp=" + x + "~" + y + "&amp;sty=r&amp;lvl=11.25097951270283&amp;rtp=~pos.42.478308717866554_24.110854669100945____&amp;FORM=MBEDLD ";
-            Uri mapurl = new Uri(mapposition);
-            OpenBrowser(mapurl);
-        }
-
 
         public async void Handle_Tapped(object sender, EventArgs e)
         {

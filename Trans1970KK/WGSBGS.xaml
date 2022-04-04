@@ -13,7 +13,6 @@
             <Entry x:Name="y" Text="" Keyboard="Numeric"/>
             <Button x:Name="Конвертирай" Text="Конвертирай" Clicked="Calculate_Clicked" />
             <Button x:Name="CheckCord" Text="Провери" Clicked="CheckCord_Clicked" />
-            <Button x:Name="Check" Text="Провери на карта" Clicked="Check_Clicked" />
             <Label Text="Име на точката" FontSize="15" Padding="15,10,30,10"/>
             <Entry x:Name="NameCord" Text=""/>
             <Button x:Name="DatabaseName" Text="Запиши" Clicked="AddToDatabase" />
