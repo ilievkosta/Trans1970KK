@@ -64,9 +64,9 @@ namespace Trans1970KK
             if (xpos.Length > 2)
             {
 
-                double wgsDx = Convert.ToDouble(xpos);
-                double wgsDy = Convert.ToDouble(ypos);
-
+            
+                double wgsDx = Math.Round(Convert.ToDouble(xpos.Replace('.', ',')), 5);
+                double wgsDy = Math.Round(Convert.ToDouble(ypos.Replace('.', ',')), 5);
 
                 await Navigation.PushModalAsync(new Show(wgsDx, wgsDy));
             }
