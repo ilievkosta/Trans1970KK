@@ -32,6 +32,7 @@ namespace Trans1970KK
             y = Math.Round(y, 2);
             InitializeComponent();
             MapViewM.ShowMap(mapView, x, y);
+          
         }
     }
 }

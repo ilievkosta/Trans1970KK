@@ -1,21 +1,21 @@
 ﻿using System;
-
-
 using Xamarin.Forms;
-
 using Mapsui;
 using Mapsui.Projection;
 using Mapsui.Utilities;
-
 using Mapsui.UI.Forms;
+using Xamarin.Essentials;
+using Xamarin.Forms.PlatformConfiguration;
+using System.Threading.Tasks;
+using Plugin.Geolocator;
 
 namespace Trans1970KK
 {
     public class MapViewM
     {
-        public static void ShowMap(MapView MyMapView, double lat, double lng)
+      
+        public static async void ShowMap(MapView MyMapView, double lat, double lng)
         {
-
 
             var myPosition = new Position(lat, lng);
 
@@ -53,7 +53,25 @@ namespace Trans1970KK
             // Use the Mapsui functions
             ZoomHelper.ZoomToBoudingbox(southWest.X, southWest.Y, northEast.X, northEast.Y, w, h, out double x, out double y, out double resolution);
             MyMapView.Navigator.NavigateTo(new Mapsui.Geometries.Point(x, y), resolution);
+        
+      
 
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            var posit = await locator.GetLastKnownLocationAsync();
+           
+            if (posit != null)
+            {
+                var GpSp = new Mapsui.UI.Forms.Position(posit.Latitude, posit.Longitude);
+                MyMapView.MyLocationLayer.UpdateMyLocation(GpSp);
+
+            }
+            else
+            {
+                var GpSp = new Mapsui.UI.Forms.Position(42.41, 25.64);
+                MyMapView.MyLocationLayer.UpdateMyLocation(GpSp);
+            }
+            
         }
     }
 }
