@@ -8,14 +8,29 @@ using Xamarin.Essentials;
 using Xamarin.Forms.PlatformConfiguration;
 using System.Threading.Tasks;
 using Plugin.Geolocator;
+using System.Net;
+using System.Linq;
 
 namespace Trans1970KK
 {
     public class MapViewM
     {
-      
-        public static async void ShowMap(MapView MyMapView, double lat, double lng)
+        public static string IPadr()
         {
+
+            var IpAddress = Dns.GetHostAddresses(Dns.GetHostName()).FirstOrDefault();
+
+            if (IpAddress != null)
+            {
+                return IpAddress.ToString();
+            }
+            else return "190.123.43.5";
+        }
+
+       
+    public static async void ShowMap(MapView MyMapView, double lat, double lng)
+        {
+
 
             var myPosition = new Position(lat, lng);
 
@@ -59,7 +74,13 @@ namespace Trans1970KK
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var posit = await locator.GetLastKnownLocationAsync();
-           
+
+
+            IpInfo IpI = new IpInfo();
+            IpI.GetUserLocationDetailsyByIp(IPadr());
+
+            double xLoc = Convert.ToDouble( IpI.Latitude);
+            double yLoc = Convert.ToDouble( IpI.Longitude);
             if (posit != null)
             {
                 var GpSp = new Mapsui.UI.Forms.Position(posit.Latitude, posit.Longitude);
@@ -68,7 +89,7 @@ namespace Trans1970KK
             }
             else
             {
-                var GpSp = new Mapsui.UI.Forms.Position(42.41, 25.64);
+                var GpSp = new Mapsui.UI.Forms.Position(xLoc, yLoc);
                 MyMapView.MyLocationLayer.UpdateMyLocation(GpSp);
             }
             
