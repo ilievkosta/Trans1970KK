@@ -71,25 +71,25 @@ namespace Trans1970KK
         
       
 
-            var locator = CrossGeolocator.Current;
-            locator.DesiredAccuracy = 50;
-            var posit = await locator.GetLastKnownLocationAsync();
-
-
-            IpInfo IpI = new IpInfo();
-            IpI.GetUserLocationDetailsyByIp(IPadr());
-
-            double xLoc = Convert.ToDouble( IpI.Latitude);
-            double yLoc = Convert.ToDouble( IpI.Longitude);
-            if (posit != null)
+           try 
             {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+                var posit = await locator.GetLastKnownLocationAsync();
+
+
+                IpInfo IpI = new IpInfo();
+                IpI.GetUserLocationDetailsyByIp(IPadr());
+
+                double xLoc = Convert.ToDouble(IpI.Latitude);
+                double yLoc = Convert.ToDouble(IpI.Longitude);
                 var GpSp = new Mapsui.UI.Forms.Position(posit.Latitude, posit.Longitude);
                 MyMapView.MyLocationLayer.UpdateMyLocation(GpSp);
-
             }
-            else
+           
+            catch (Exception ex)
             {
-                var GpSp = new Mapsui.UI.Forms.Position(xLoc, yLoc);
+                var GpSp = new Mapsui.UI.Forms.Position(lat, lng);
                 MyMapView.MyLocationLayer.UpdateMyLocation(GpSp);
             }
             
